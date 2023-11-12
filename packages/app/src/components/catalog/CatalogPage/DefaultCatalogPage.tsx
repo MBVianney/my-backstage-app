@@ -39,9 +39,9 @@ import {
   EntityOwnerPickerProps,
 } from '@backstage/plugin-catalog-react';
 import React, { ReactNode } from 'react';
-import { createComponentRouteRef } from '../../routes';
+import { createComponentRouteRef } from '../../../routes';
 import { CatalogTable, CatalogTableRow } from '../CatalogTable';
-import { catalogTranslationRef } from '../../translation';
+import { catalogTranslationRef } from '../../../translation';
 import { useTranslationRef } from '@backstage/core-plugin-api/alpha';
 
 /** @internal */
