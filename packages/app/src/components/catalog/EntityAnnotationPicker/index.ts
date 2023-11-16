@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 The Backstage Authors
+ * Copyright 2021 The Backstage Authors
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,8 @@
  * limitations under the License.
  */
 
-export { DefaultCatalogPage } from './DefaultCatalogPage';
+export { EntityAnnotationPicker } from './EntityAnnotationPicker';
 export type {
-  DefaultCatalogPageProps,
-} from './DefaultCatalogPage';
+  CatalogReactEntityTagPickerClassKey,
+  EntityTagPickerProps,
+} from './EntityAnnotationPicker';

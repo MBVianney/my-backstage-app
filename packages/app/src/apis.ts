@@ -8,6 +8,10 @@ import {
   configApiRef,
   createApiFactory,
 } from '@backstage/core-plugin-api';
+import { createApiRef } from '@backstage/core-plugin-api';
+import { CatalogApi } from '@backstage/catalog-client';
+
+
 
 export const apis: AnyApiFactory[] = [
   createApiFactory({
@@ -17,3 +21,12 @@ export const apis: AnyApiFactory[] = [
   }),
   ScmAuth.createDefaultApiFactory(),
 ];
+
+
+/**
+ * The API reference for the {@link @backstage/catalog-client#CatalogApi}.
+ * @public
+ */
+export const catalogApiRef = createApiRef<CatalogApi>({
+  id: 'plugin.catalog.service',
+});
