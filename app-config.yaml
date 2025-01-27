@@ -1,7 +1,8 @@
 app:
   title: Scaffolded Backstage App
   baseUrl: http://localhost:3000
-
+  feature:
+    useAuth: false
 organization:
   name: My Company
 
@@ -120,3 +121,60 @@ catalog:
     #   target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/acme-corp.yaml
     #   rules:
     #     - allow: [User, Group]
+mbvApiData:
+  postCatalogProcessingPurge:
+    deleteModifiedBefore:
+      hours: 24
+  seu:
+    doMount: 'false'
+    dir: /seu
+  import:
+    default:
+      mbvSchedule:
+        activate: 'true'
+        schedule:
+          timeout:
+            minutes: 2
+          initialDelay:
+            seconds: 30
+          frequency:
+            cron: "0 0 */1 * * 1-5"
+      deleteMaxPercent: 10
+      gitlab:
+        projectId: ""
+        branch: master
+        encoding: utf-8
+      filesystem:
+        dir: /seu/import
+        encoding: utf-8
+    zosconnect:
+      zosInfo:
+        sourceType: "filesystem" #(filesystem ou gitlab)
+        filesystem: 
+          multerDir: "/tmp/"
+          dir: "/tmp/upload"
+          filePatern: "zos-connect-consumer."
+          encoding: utf-8
+  export:
+    hopex:
+      workingDir: /export/hopex
+      file: "test.exp"
+      pushToSeu: 'true'
+      mbvSchedule:
+        activate: 'true'
+        schedule:
+          timeout:
+            minutes: 2
+          initialDelay:
+            seconds: 30
+          frequency:
+            cron: "0 0 14 * * 1-5"
+      mbvScheduleReject: 
+        activate: 'true'
+        schedule:
+          timeout:
+            minutes: 2
+          initialDelay:
+            seconds: 30
+          frequency:
+            cron: "0 0 */1 * * 1-5"
