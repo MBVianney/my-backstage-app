@@ -79,6 +79,11 @@ auth:
       development:
         clientId: e62144c8020c47250af1
         clientSecret: 8a1609df88dc3d9b59c3d68232089b09a9aead08
+        signIn:
+          resolvers:
+            # Matches the GitHub username with the Backstage user entity name.
+            # See https://backstage.io/docs/auth/github/provider#resolvers for more resolvers.
+            - resolver: usernameMatchingUserEntityName
     # See https://backstage.io/docs/auth/guest/provider
     guest: {}
 

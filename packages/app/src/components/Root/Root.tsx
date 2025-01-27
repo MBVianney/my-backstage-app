@@ -27,7 +27,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import { MyGroupsSidebarItem } from '@backstage/plugin-org';
 import GroupIcon from '@material-ui/icons/People';
-// import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
+import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
 
 
 export const jsxIcon = (icon: JSX.Element): React.FunctionComponent<{}> => {
@@ -97,7 +97,7 @@ export const Root = ({ children }: PropsWithChildren<{}>) => (
         to="/settings"
       >
         <SidebarSettings />
-        {/* <SidebarItem icon={jsxIcon(<SupervisorAccountIcon fontSize='small'/>)} to="administration" text="Administration" /> */}
+        <SidebarItem icon={jsxIcon(<SupervisorAccountIcon fontSize='small'/>)} to="administration" text="Administration" />
       </SidebarGroup>
     </Sidebar>
     {children}
